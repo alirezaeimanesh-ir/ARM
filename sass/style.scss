@@ -41,14 +41,43 @@ body {
       right: -300%;
     }
   }
+  svg {
+    position: relative;
+    z-index: 5;
+    width: $size;
+    height: $size;
+
+    path {
+      transition: opacity $transitionspeed ease;
+      transition-delay: $transitiondelay;
+    }
+  }
   .top {
     opacity: 1;
     z-index: 2;
+
+    &.left {
+      fill: url(#orange);
+    }
+    &.right {
+      fill: url(#red);
+    }
+  }
+  .bottom {
+    opacity: 0;
+    z-index: 1;
+
+    &.left {
+      fill: url(#darkblue);
+    }
+    &.right {
+      fill: url(#blue);
+    }
   }
   &::after {
     position: absolute;
     top: 8px;
-    right: 8px;
+    left: 8px;
     z-index: 10;
     padding: 8px 12px;
     background: rgba(29, 29, 29, 0.75);
